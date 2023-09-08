@@ -5,22 +5,33 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
+    "b": "astro build",
+    "b2": "pnpm build && pnpm preview",
     "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "preview": "wrangler pages dev ./dist --d1",
+    "astro": "astro",
+    "wr": "wrangler"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^7.0.2",
     "@astrojs/tailwind": "^5.0.0",
-    "astro": "^3.0.10",
-    "tailwindcss": "^3.3.3"
+    "@cloudflare/workers-types": "^4.20230904.0",
+    "astro": "^3.0.11",
+    "tailwindcss": "^3.3.3",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "@types/uuid": "^9.0.3",
     "@typescript-eslint/eslint-plugin": "^6.6.0",
     "@typescript-eslint/parser": "^6.6.0",
     "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-astro": "^0.29.0",
     "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-prettier": "^5.0.0",
     "prettier": "^3.0.3",
     "prettier-plugin-astro": "^0.12.0",
-    "prettier-plugin-tailwindcss": "^0.5.4"
+    "prettier-plugin-tailwindcss": "^0.5.4",
+    "wrangler": "^3.7.0"
   }
 }
