@@ -6,5 +6,10 @@ export default {
   trailingComma: 'all',
   bracketSpacing: true,
   arrowParens: 'always',
-  plugins: ['prettier-plugin-astro', 'prettier-plugin-tailwindcss'],
+  plugins: [
+    'prettier-plugin-astro',
+    'prettier-plugin-svelte',
+    'prettier-plugin-tailwindcss',
+  ],
+  overrides: [{ files: '*.svelte', options: { parser: 'svelte' } }],
 };
