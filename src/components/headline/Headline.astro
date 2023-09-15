@@ -1,0 +1,17 @@
+---
+import { Image } from 'astro:assets';
+
+import jpgIntro from '~/assets/images/intro.jpg';
+---
+
+<div class="relative">
+  <Image alt="Wedding" src={jpgIntro} />
+  <div
+    class:list={[
+      'absolute bottom-1/24 left-0 right-0',
+      'text-center font-bahagia text-28 text-white',
+    ]}
+  >
+    Gwang-won & Hee-in
+  </div>
+</div>
