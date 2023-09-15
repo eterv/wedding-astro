@@ -1,51 +1,47 @@
 ---
-interface Props {
-  title: string;
-}
+import GNB from '../components/nav/GNB.svelte';
+import { useTranslation } from '../i18n';
 
-const { title } = Astro.props;
+import '../styles/base.css';
+
+interface Props {}
+
+const { t } = useTranslation(Astro);
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta property="og:description" content={t('og.desc')} />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:site_name" content="GW & HI - Wedding Invitation" />
+    <meta property="og:title" content={t('og.title')} />
+    <meta
+      property="og:image"
+      content="https://wedding.eterv.com/images/intro/intro.jpg"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://wedding.eterv.com" />
+
+    <title>{t('title')}</title>
+
+    <link rel="icon" href="/favicon/favicon-16.png" sizes="16x16" />
+    <link rel="icon" href="/favicon/favicon-32.png" sizes="32x32" />
+    <link rel="icon" href="/favicon/favicon-128.png" sizes="128x128" />
   </head>
-  <body>
-    <slot />
+
+  <body class="bg-black1 overflow-y-auto overflow-x-hidden">
+    <header class="sticky left-0 right-0 top-0 z-10">
+      <GNB client:load />
+    </header>
+
+    <main class="relative mx-auto max-w-800 bg-white">
+      <slot />
+    </main>
   </body>
 </html>
-<style is:global>
-  :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
-  }
-  html {
-    font-family: system-ui, sans-serif;
-    background: #13151a;
-    background-size: 224px;
-  }
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
-  }
-</style>
