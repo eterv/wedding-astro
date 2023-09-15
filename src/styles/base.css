@@ -1,0 +1,16 @@
+@font-face {
+  src: url('/fonts/Bahagia.woff') format('woff');
+  font-family: 'Bahagia';
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --black1: 1e2228;
+}
+
+html,
+body {
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+}

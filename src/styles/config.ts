@@ -18,10 +18,12 @@ export const colors = {
   /** ? */
   primary: '#',
 
-  /** #111114 */
-  black: '#111114',
-  /** #36373B */
-  almostBlack: '#36373B',
+  /** #1E2228 */
+  black1: '#1E2228',
+  /** #31343C */
+  black3: '#31343C',
+  /** #41444C */
+  black4: '#41444C',
   /** #5B5C61 */
   darkGray: '#5B5C61',
   /** #8A8C91 */
